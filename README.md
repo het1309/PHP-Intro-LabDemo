@@ -1,34 +1,77 @@
-# PHP-Intro-LabDemo
-🛠 Requirements :- Before you begin, ensure you have the following installed on your system:
-    -> PHP Install: Download php from php.net of Version 7.4 or higher.
-    -> Verify your PHP installation by running php -v in your terminal.
+PHP Intro Lab Demo Setup Guide
+This guide provides a comprehensive overview of the requirements and step-by-step installation procedures necessary to set up your environment for the PHP Intro Lab Demo. Please follow these instructions carefully to ensure all prerequisites are met before you begin development.
 
-    -> Install Composer from https://getcomposer.org/Composer-Setup.exe
-    -> Make new folder name "Composer" in C drive and move downloaded setup over in that folder then run the installer.
-    ✅ During Installation:
-        -> It will ask you for the path to php.exe — browse to where PHP is installed (e.g., C:\php\php.exe)
-        -> Make sure the "Add Composer to PATH" option is selected
+🛠 Requirements & Setup
+Before you begin, ensure you have the following installed and configured on your system:
 
-    -> Steps to Add PHP & Composer to System PATH are as follows: -
-        -> Press Win + S, type environment variables, and select Edit the system environment variables
-        -> Click Environment Variables
-        -> Under System variables, select Path and click Edit
-        -> Click New and add the path to your PHP folder (e.g., C:\php)
-        -> Click OK to close all dialogs
+**1. PHP Installation**
 
-    -> Node.js & npm: Node.js (which includes npm) is required to run the server.js script that automatically 
-       starts the PHP server and opens your browser. Download Node.js from nodejs.org.
-    -> Verify your Node.js and npm installations by running node -v and npm -v in your terminal.
+    a) Download PHP version 7.4 or higher from the official PHP website: php.net.
+   
+    b) Run the following command to confirm PHP is installed and accessible:
+        php -v
 
-    -> VS Code: Download VS Code from code.visualstudio.com.
+**2. Composer Installation**
 
-    -> Recommended VS Code Extensions:
-        -> "PHP Intelephense" by Ben Mewburn (for intelligent code completion and linting)
-        -> Quick Start Procedure after PHP Intelesphense extension installed in VScode. We need to disable the 
-           built-in VSCode PHP Language Features. Follow below steps: -
-                1. Go to Extensions.
-                2. Search for @builtin php
-                3. Disable PHP Language Features. Leave PHP Language Basics enabled for syntax highlighting.
+    a) Composer is a dependency manager for PHP.
 
-    -> Add glob patterns for non standard php file extensions to the files.associations setting.
-        For example: "files.associations": { "*.module": "php" }.
+    b) Create a new folder named "Composer" in your C: drive (e.g., C:\Composer).
+    
+    c) Download the Composer-Setup.exe installer from: getcomposer.org. && move the file into this newly created folder. 
+        Then run the Installer.
+        
+    d) During Installation: When prompted for the path to php.exe, browse to your PHP installation directory (e.g., C:\php\php.exe).
+                            Ensure the "Add Composer to PATH" option is selected.
+
+**3. Adding PHP & Composer to System PATH (Verification/Manual Steps)**
+
+    a) Open Environment Variables:
+        -> Type "environment variables" and select "Edit the system environment variables."
+        -> Access Environment Variables Dialog: In the System Properties window, click the Environment Variables... button.
+        -> Edit System Path Variable: Under the "System variables" section, locate and select the Path variable. Click the Edit... button.
+        -> Add PHP Directory: In the "Edit environment variable" dialog, click New. Add the full path to your PHP installation folder                                     (e.g., C:\php).
+        -> Click OK to close all open dialogs (Edit environment variable, Environment Variables, System Properties).
+
+**4. Node.js & npm Installation** 
+
+    a) Download the recommended version of Node.js from: nodejs.org.
+    
+    b) Run the following commands to confirm Node.js and npm are installed:
+            node -v OR npm -v
+
+**5. VS Code Installation**
+
+    -> Download and install VS Code from: code.visualstudio.com.
+
+**6. Recommended VS Code Extensions**
+
+    a) These extensions will significantly enhance your PHP development experience within VS Code:
+        -> "PHP Intelephense" by Ben Mewburn Provides intelligent code completion, linting, and other advanced language features for PHP.
+
+    b) Quick Start Procedure (Important for Intelephense):
+        1. After installing the "PHP Intelephense" extension, you must disable VS Code's built-in PHP Language Features to avoid conflicts.
+        2. Go to the Extensions view in VS Code (you can use the shortcut Ctrl+Shift+X or Cmd+Shift+X).
+        3. In the Extensions search bar, type @builtin PHP.    
+        4. Locate "PHP Language Features" and click the Disable button next to it.
+        5. Crucially, leave "PHP Language Basics" enabled, as this provides essential syntax highlighting.
+
+**7. File Associations for Non-Standard PHP Extensions**
+
+    -> Open VS Code Settings (File > Preferences > Settings or Ctrl+,). And then, 
+        Search for "files.associations".
+        Click "Edit in settings.json" if prompted, or directly add/modify the JSON object.
+
+        "files.associations": {
+        "*.module": "php",
+        "*.inc": "php", // Example for .inc files
+        }
+
+**8. Running the Server**
+
+    -> Option A: 
+        Use the following command in the terminal to start a server and to launch localhost on Chrome automatically.
+            node server.js
+
+    -> Option B:
+        Use the following command in the terminal to start a server: php -S localhost:8000
+        Then click on the link that shows in the terminal as (http://localhost:8000)
